@@ -1,0 +1,9 @@
+a. Create a FIFO file using mknod command
+
+mknod special1 p
+
+b. Create a FIFO file using mkfifo command.
+
+mkfifo special2 
+
+c. use strace to find out which is better.
