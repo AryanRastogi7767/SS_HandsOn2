@@ -17,7 +17,7 @@ int main() {
   }
 
   if (pid1 == 0) {
-    dup2(fd1[1], STDOUT_FILENO); // redirect stdout to pipes write end
+    dup2(fd1[1], 1); // redirect stdout to pipes write end
     close(fd1[0]);
     close(fd1[1]);
     execlp("ls", "ls", "-l", (char *)NULL);
@@ -32,8 +32,8 @@ int main() {
   if (pid2 < 0)
     perror("fork");
   if (pid2 == 0) {
-    dup2(fd1[1], STDIN_FILENO);  // redirect stdout to pipes write end
-    dup2(fd2[1], STDOUT_FILENO); // redirect stdout to pipes write end
+    dup2(fd1[1], 0); // redirect stdout to pipes write end
+    dup2(fd2[1], 1); // redirect stdout to pipes write end
     close(fd1[1]);
     close(fd1[0]);
     close(fd2[0]);
@@ -49,7 +49,7 @@ int main() {
   if (pid3 < 0)
     perror("fork");
   if (pid3 == 0) {
-    dup2(fd2[0], STDIN_FILENO); // redirect stdin to pipes read end
+    dup2(fd2[0], 0); // redirect stdin to pipes read end
     close(fd2[1]);
     close(fd2[0]);
     execlp("wc", "wc", "-l", (char *)NULL);

@@ -1,28 +1,67 @@
+
 #include <arpa/inet.h>
+#include <errno.h>
+#include <netinet/ip.h>
+#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
-#include <sys/types.h>
 #include <unistd.h>
-int main(void) {
 
-  struct sockaddr_in serv, cli;
+static void msg(const char *msg) { fprintf(stderr, "%s\n", msg); }
 
-  int sd = socket(AF_INET, SOCK_STREAM, 0);
+static void die(const char *msg) {
+  int err = errno;
+  fprintf(stderr, "[%d] %s\n", err, msg);
+  abort();
+}
 
-  serv.sin_family = AF_UNIX;
-  serv.sin_addr.s_addr = INADDR_ANY;
-  serv.sin_port = htons(5055);
-
-  int b = bind(sd, &serv, sizeof(serv));
-  if (b == -1) {
-    printf("Error in bind\n");
+static void do_something(int connfd) {
+  char rbuffer[64] = {};
+  ssize_t n = read(connfd, rbuffer,
+                   sizeof(rbuffer) -
+                       1); // read upto sizeof(rbuf) - 1 bytes starting at rbuf
+  if (n < 0) {
+    msg("read() error");
+    return;
   }
-  listen(sd, 1);
+  printf("client says: %s\n", rbuffer);
+  char wbuffer[] = "world";
+  write(connfd, wbuffer, strlen(wbuffer));
+}
 
-  int nsd = accept(sd, &cli, sizeof(cli));
-  char *buf = "Hello this is server!!.";
-  write(nsd, buf, strlen(buf));
-
-  return 0;
+int main() {
+  int fd = socket(AF_INET, SOCK_STREAM, 0);
+  if (fd < 0) {
+    die("socket()");
+  }
+  // AF_INET is for ipv4, you can use AF_INET6 for ipv6 socket
+  // SOCK_STREAM is for TCP
+  int val = 1;
+  setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(val));
+  // setsockopt() configures a socket. SO_REUSEADDR server binds to same address
+  // if restarted now lets bind and listen, using address 0.0.0.0:1234
+  struct sockaddr_in addr = {};
+  addr.sin_family = AF_INET;
+  addr.sin_port = ntohs(1234);
+  addr.sin_addr.s_addr = ntohl(0); // 0.0.0.0
+  int rv = bind(fd, (struct sockaddr *)&addr, sizeof(addr));
+  if (rv) {
+    die("bind()");
+  }
+  // listen
+  rv = listen(fd, SOMAXCONN);
+  if (rv) {
+    die("listen()");
+  }
+  // do something (simple read and write while(true)
+  while (1) {
+    struct sockaddr_in client_addr = {};
+    socklen_t socklen = sizeof(client_addr);
+    int connfd = accept(fd, (struct sockaddr *)&client_addr, &socklen);
+    do_something(connfd);
+    close(connfd);
+    return 0;
+  }
 }
