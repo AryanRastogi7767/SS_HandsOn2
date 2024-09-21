@@ -1,3 +1,6 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*10. Write a separate program using sigaction system call to catch the
+following signals. a. SIGSEGV b. SIGINT c. SIGFPE*/
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,3 +1,8 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*16. Write a program to send and receive data from parent to child vice versa.
+Use two way communication.
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 

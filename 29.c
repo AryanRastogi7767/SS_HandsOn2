@@ -1,4 +1,6 @@
-
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*29. Write a program to remove the message queue.
+ */
 #include <stdio.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>

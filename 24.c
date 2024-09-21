@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+// 24. Write a program to create a message queue and print the key and message
+// queue id.
+
 #include <stdio.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>

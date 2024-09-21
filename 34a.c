@@ -1,3 +1,8 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*34. Write a program to create a concurrent server.
+a. use fork
+b. use pthread_create
+ */
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <stdlib.h>

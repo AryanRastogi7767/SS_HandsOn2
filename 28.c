@@ -1,3 +1,8 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*28. Write a program to
+ * change the exiting message queue permission. (use msqid_ds structure)
+ */
+
 #include <stdio.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>

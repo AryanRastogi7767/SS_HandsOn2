@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*1. Write a separate program (for each time domain) to set a interval timer in
+10sec and 10micro second a. ITIMER_REAL b. ITIMER_VIRTUAL c. ITIMER_PROF
+ */
 #include <signal.h>
 #include <stdio.h>
 #include <sys/time.h>

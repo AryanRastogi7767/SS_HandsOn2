@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*31. Write a program to create a semaphore and initialize value to the
+semaphore. a. create a binary semaphore b. create a counting semaphore
+ */
 #include <stdio.h>
 #include <sys/ipc.h>
 #include <sys/sem.h>

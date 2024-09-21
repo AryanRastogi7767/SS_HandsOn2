@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*3. Write a program to set (any one) system resource limit. Use setrlimit
+ * system call.
+ */
 #include <stdio.h>
 #include <sys/resource.h>
 
@@ -11,3 +15,6 @@ int main(void) {
   }
   return 0;
 }
+
+// OUTPUT
+// Limit set Successfully.

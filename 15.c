@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*15. Write a simple program to send some data from parent to the child process.
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 

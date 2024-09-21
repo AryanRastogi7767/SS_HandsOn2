@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+// 11. Write a program to ignore a SIGINT signal then reset the default action
+// of the SIGINT signal - use sigaction system call.
+
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>

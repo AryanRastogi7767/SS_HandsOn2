@@ -1,3 +1,9 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*27. Write a program to receive messages from the message queue.
+a. with 0 as a flag
+b. with IPC_NOWAIT as a flag
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

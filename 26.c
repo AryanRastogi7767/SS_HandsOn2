@@ -1,3 +1,5 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+// 26. Write a program to send messages to the message queue. Check $ipcs -q
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

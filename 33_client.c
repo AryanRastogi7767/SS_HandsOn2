@@ -1,3 +1,5 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+// 33. Write a program to communicate between two machines using socket.
 #include <arpa/inet.h>
 #include <errno.h>
 #include <netinet/ip.h>

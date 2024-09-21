@@ -1,3 +1,6 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+// 21. Write two programs so that both can communicate by FIFO -Use two way
+// communications.
 #include <fcntl.h>
 #include <stdio.h>
 #include <sys/stat.h>

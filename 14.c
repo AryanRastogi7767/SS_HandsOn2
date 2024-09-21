@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+// 14. Write a simple program to create a pipe, write to the pipe, read from
+// pipe and display on the monitor.
+
 #include <stdio.h>
 #include <unistd.h>
 

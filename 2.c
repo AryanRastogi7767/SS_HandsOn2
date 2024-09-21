@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+// 2. Write a program to print the system resource limits. Use getrlimit system
+// call.
+
 #include <stdio.h>
 #include <sys/resource.h>
 

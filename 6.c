@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*6. Write a simple program to create three threads.
+ */
+
 #include <pthread.h>
 #include <stdio.h>
 #include <unistd.h>

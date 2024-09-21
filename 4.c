@@ -1,3 +1,8 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*4. Write a program to measure how much time is taken to execute 100 getppid (
+) system call. Use time stamp counter.
+ */
+
 #include <stdio.h>
 #include <sys/time.h>
 #include <unistd.h>

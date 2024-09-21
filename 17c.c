@@ -1,3 +1,9 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*17. Write a program to execute ls -l | wc.
+a. use dup
+b. use dup2
+c. use fcntl
+ */
 #include <fcntl.h>
 #include <stdio.h>
 #include <unistd.h>

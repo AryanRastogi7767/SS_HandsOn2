@@ -1,3 +1,7 @@
+// Name: Aryan Rastogi      RollNo. MT2024026
+/*7. Write a simple program to print the created thread ids.
+ */
+
 #include <pthread.h>
 #include <stdio.h>
 #include <unistd.h>
